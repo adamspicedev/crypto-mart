@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>Crypto-Mart</title>
+  </head>
+  <body id="dark-theme">
+    <header class="header">
+      <div class="global">
+        <p>Coins: <b id="coins-count">14973</b></p>
+        <p>Exchanges: <b id="exchanges-count">1164</b></p>
+        <p>
+          Market Cap: <span><b id="market-cap">$2.297T</b></span
+          ><span id="market-cap-change"
+            >-4.9% <i class="ri-arrow-down-s-fill"></i
+          ></span>
+        </p>
+        <p>24h Vol: <b id="volume">$109.452B</b></p>
+        <p>Dominance: <b id="dominance">BTC 53.0% - ETH 15.6%</b></p>
+      </div>
+
+      <nav>
+        <div class="left-section">
+          <a href="#" class="logo">Logo.</a>
+          <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/pages/charts.html">Charts</a>
+            <a href="/pages/search.html">Search</a>
+            <a href="/pages/about.html">About</a>
+          </div>
+        </div>
+        <div class="right-section">
+          <form action="" class="search" id="search-form">
+            <i class="ri-search-line"></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search fo an asset..."
+              required
+              autocomplete="off"
+            />
+          </form>
+          <i id="theme-toggle" class="ri-sun-line"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="coin-container">
+        <div class="left-section">
+          <div class="ticker">
+            <div class="trading-view-widget-container" id="ticker-widget"></div>
+          </div>
+          <h3>Statistics</h3>
+          <div class="coin-info">
+            <div class="logo">
+              <img src="../assets/images/bitcoin.svg" alt="bitcoin" />
+              <h4>Bitcoin <span>(BTC)</span></h4>
+              <p>#1</p>
+            </div>
+            <div class="status">
+              <div class="item">
+                <p class="str">Market Cap</p>
+                <p class="num">$1,5454,1111,111.020</p>
+              </div>
+              <div class="item">
+                <p class="str">Current Price</p>
+                <p class="num">$1,5454,1111,111.020</p>
+              </div>
+              <div class="item">
+                <p class="str">All Time High</p>
+                <p class="num">$1,5454,1111,111.020</p>
+              </div>
+              <div class="item">
+                <p class="str">All Time Low</p>
+                <p class="num">$1,5454,1111,111.020</p>
+              </div>
+              <div class="item">
+                <p class="str">Total Volume</p>
+                <p class="num">$1,5454,1111,111.020</p>
+              </div>
+              <div class="item">
+                <p class="str">Total Supply</p>
+                <p class="num">$1,5454,1111,111.020</p>
+              </div>
+              <div class="item">
+                <p class="str">Max Supply</p>
+                <p class="num">$1,5454,1111,111.020</p>
+              </div>
+              <div class="item">
+                <p class="str">Calculating Supply</p>
+                <p class="num">$1,5454,1111,111.020</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-section">
+          <div class="mini-chart">
+            <div
+              class="trading-view-widget-container"
+              id="mini-chart-widget"
+            ></div>
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="status">
+            <h3>Historical Info</h3>
+            <div class="container">
+              <div class="item">
+                <p class="str">ATH</p>
+                <p class="num">$1,5454000</p>
+              </div>
+              <div class="item">
+                <p class="str">ATL</p>
+                <p class="num">$1,5454</p>
+              </div>
+              <div class="item">
+                <p class="str">24h High</p>
+                <p class="num">$1,5454000</p>
+              </div>
+              <div class="item">
+                <p class="str">24h Low</p>
+                <p class="num">$1,54540000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="status">
+            <h3>Markets</h3>
+            <div class="container">
+              <div class="item">
+                <p class="str">Binance</p>
+                <div class="links">
+                  <a href="https://www.binance.com/en/trade/BTC-USD">Trade</a>
+                  <p style="background-color: green">Trust: green</p>
+                </div>
+              </div>
+              <div class="item">
+                <p class="str">Coinbase</p>
+                <div class="links">
+                  <a href="https://www.coinbase.com/advanced-trade/spot/BTC-USD"
+                    >Trade</a
+                  >
+                  <p style="background-color: green">Trust: green</p>
+                </div>
+              </div>
+              <div class="item">
+                <p class="str">Kraken</p>
+                <div class="links">
+                  <a href="https://pro.kraken.com/app/trade/BTC-USD">Trade</a>
+                  <p style="background-color: green">Trust: green</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="status">
+            <h3>Info</h3>
+            <div class="container">
+              <div class="item">
+                <p class="str">Website</p>
+                <div class="links">
+                  <a target="_blank" href="https://www.bitcoin.org">Visit</a>
+                  <a target="_blank" href="https://www.bitcoin.org/bitcoin.pdf"
+                    >Whitepaper</a
+                  >
+                </div>
+              </div>
+              <div class="item">
+                <p class="str">Community</p>
+                <div class="links">
+                  <a target="_blank" href="https://x.com/bitcoin">Twitter</a>
+                  <a target="_blank" href="https://www.facebook.com/bitcoin"
+                    >Facebook</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="coin-desc">
+        <h3>About Asset</h3>
+        <p id="coin-desc-p">
+          Bitcoin is a decentralized digital currency that operates on a
+          peer-to-peer network, allowing users to send and receive payments
+          without the need for a central authority like a bank or government. It
+          was introduced in 2008 by an unknown person or group using the
+          pseudonym Satoshi Nakamoto. Bitcoin transactions are recorded on a
+          public ledger called the blockchain, which ensures transparency and
+          security. <br /><br />
+          The supply of Bitcoin is capped at 21 million coins, making it a
+          deflationary asset. It is created through a process called mining,
+          where powerful computers solve complex mathematical problems to
+          validate transactions and secure the network, earning new bitcoins as
+          a reward. Bitcoin has gained popularity as both a form of digital
+          money and a store of value, often compared to gold due to its limited
+          supply and decentralized nature. <br /><br />
+          However, its price is highly volatile, and it has faced regulatory
+          challenges and skepticism from some financial institutions. Despite
+          this, Bitcoin has inspired a broader cryptocurrency movement, leading
+          to the creation of thousands of alternative digital currencies.
+        </p>
+        <div class="spinner" id="coin-info-spinner"></div>
+        <div class="error-message" id="coin-info-error">
+          API limit reached, please try again later.
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; Spicey.Dev</p>
+      <div class="social-icons">
+        <a href="www.linkedin.com/in/adam-spice"
+          ><i class="ri-linkedin-box-fill"></i
+        ></a>
+      </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scroll-to-top">
+      <i class="ri-arrow-up-s-line"></i>
+    </button>
+  </body>
+</html>

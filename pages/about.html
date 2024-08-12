@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>Crypto-Mart</title>
+  </head>
+  <body id="dark-theme">
+    <header class="header">
+      <div class="global">
+        <p>Coins: <b id="coins-count">14973</b></p>
+        <p>Exchanges: <b id="exchanges-count">1164</b></p>
+        <p>
+          Market Cap: <span><b id="market-cap">$2.297T</b></span
+          ><span id="market-cap-change"
+            >-4.9% <i class="ri-arrow-down-s-fill"></i
+          ></span>
+        </p>
+        <p>24h Vol: <b id="volume">$109.452B</b></p>
+        <p>Dominance: <b id="dominance">BTC 53.0% - ETH 15.6%</b></p>
+      </div>
+
+      <nav>
+        <div class="left-section">
+          <a href="#" class="logo">Logo.</a>
+          <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/pages/charts.html">Charts</a>
+            <a href="/pages/search.html">Search</a>
+            <a href="/pages/about.html" class="active">About</a>
+          </div>
+        </div>
+        <div class="right-section">
+          <form action="" class="search" id="search-form">
+            <i class="ri-search-line"></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search fo an asset..."
+              required
+              autocomplete="off"
+            />
+          </form>
+          <i id="theme-toggle" class="ri-sun-line"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="about-container">
+        <div class="info">
+          <h3>The Crypto-Mart Story</h3>
+          <p>
+            Welcome to Crypto-Mart, your premiere destination for seamless and
+            secure cryptocurrency transactions. Our mission is to empower
+            individuals and institutions by providing a platform that combines
+            innovation, security, and user-friendly design to meet all of your
+            digital asset needs.
+            <br /><br />
+            At Crypto-Mart, we envision a world where digital currency is
+            available to everyone. We strive to bridge the gap between
+            traditional finance and the future of money by offering a platform
+            that simplifies cryptocurrency trading while ensuring the highest
+            standards of security and reliability.
+          </p>
+          <div class="button">
+            <button>Learn More</button>
+            <button>Contact Us</button>
+          </div>
+        </div>
+        <div class="image">
+          <img src="../assets/images/about.webp" alt="about" />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; Spicey.Dev</p>
+      <div class="social-icons">
+        <a href="www.linkedin.com/in/adam-spice"
+          ><i class="ri-linkedin-box-fill"></i
+        ></a>
+      </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scroll-to-top">
+      <i class="ri-arrow-up-s-line"></i>
+    </button>
+  </body>
+</html>
