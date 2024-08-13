@@ -6,6 +6,32 @@ const volume = document.getElementById("volume");
 const dominance = document.getElementById("dominance");
 
 document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.id = savedTheme;
+    updateIcon(savedTheme);
+  }
+
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = body.id;
+    const newTheme =
+      currentTheme === "light-theme" ? "dark-theme" : "light-theme";
+    body.id = newTheme;
+    localStorage.setItem("theme", newTheme);
+    updateIcon(newTheme);
+  });
+
+  function updateIcon(currentTheme) {
+    if (currentTheme === "light-theme") {
+      themeToggle.classList.replace("ri-moon-line", "ri-sun-line");
+    } else {
+      themeToggle.classList.replace("ri-sun-line", "ri-moon-line");
+    }
+  }
+
   fetchGlobal();
 });
 
@@ -14,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
  * @param {string} key - The key used to retrieve the data from the local storage.
  * @returns {any} - The parsed data associated with the provided key, or null if the data is not found or expired.
  */
-function getLocalStorage(key) {
+function getLocalStorageData(key) {
   const storedData = localStorage.getItem(key);
   if (!storedData) return null;
 
@@ -43,8 +69,8 @@ function setLocalStorageData(key, data) {
 }
 
 function fetchGlobal() {
-  const localStorageKey = "Global_data";
-  const localData = getLocalStorage(localStorageKey);
+  const localStorageKey = "Global_Data";
+  const localData = getLocalStorageData(localStorageKey);
 
   if (localData) {
     displayGlobalData(localData);
@@ -99,4 +125,35 @@ function displayGlobalData(globalData) {
     ? `${globalData.market_cap_percentage?.eth.toFixed(1)}%`
     : "N/A";
   dominance.textContent = `BTC ${btcDominance} - ETH ${ethDominance}`;
+}
+
+function toggleSpinner(listId, spinnerId, showSpinner) {
+  const element = document.getElementById(listId);
+  const spinner = document.getElementById(spinnerId);
+
+  if (spinner) {
+    spinner.style.display = showSpinner ? "block" : "none";
+  }
+  if (element) {
+    element.style.display = showSpinner ? "none" : "block";
+  }
+}
+
+function createTable(headerNames, fixedIndex = 0) {
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  table.appendChild(thead);
+
+  const headerRow = document.createElement("tr");
+  headerNames.forEach((headerName, index) => {
+    const th = document.createElement("th");
+    th.textContent = headerName;
+    if (index === fixedIndex) {
+      th.classList.add("table-fixed-column");
+    }
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+
+  return table;
 }
