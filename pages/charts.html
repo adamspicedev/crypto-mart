@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
     <title>Crypto-Mart</title>
   </head>
-  <body id="dark-theme">
+  <body>
     <header class="header">
       <div class="global">
         <p>Coins: <b id="coins-count">14973</b></p>
@@ -53,8 +53,8 @@
 
     <main>
       <div class="chart-container">
-        <div class="trading-view-widget-container" id="chart-widget"></div>
-        <div class="trading-view-widget-copyright hidden">
+        <div class="tradingview-widget-container" id="chart-widget"></div>
+        <div class="tradingview-widget-copyright hidden">
           <a
             href="https://www.tradingview.com"
             rel="noopener nofollow"
@@ -78,5 +78,8 @@
     <button onclick="scrollToTop()" id="scroll-to-top">
       <i class="ri-arrow-up-s-line"></i>
     </button>
+
+    <script src="../assets/js/chart.js"></script>
+    <script src="../assets/js/app.js"></script>
   </body>
 </html>

@@ -554,7 +554,7 @@ main > h3 {
   border: 1px solid var(--border-color);
 }
 
-.coin-container .trading-view-widget-container {
+.coin-container .tradingview-widget-container {
   padding: 10px;
 }
 .coin-container .left-section .coin-info,
@@ -649,7 +649,7 @@ main > h3 {
   width: 48%;
 }
 
-.coin-container .main-section .mini-chart .trading-view-widget-container {
+.coin-container .main-section .mini-chart .tradingview-widget-container {
   padding: 0;
 }
 
