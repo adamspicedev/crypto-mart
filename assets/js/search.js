@@ -15,6 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+/**
+ * Fetches search results based on the provided parameter and updates the UI accordingly.
+ *
+ * @param {string} param - The search parameter.
+ * @param {Array<string>} idsToToggle - The array of element IDs to toggle.
+ * @returns {void}
+ */
 function fetchSearchResults(param, idsToToggle) {
   const searchHeading = document.getElementById("search-heading");
 
@@ -109,6 +116,12 @@ function coinsResult(coins) {
   coinsList.appendChild(table);
 }
 
+/**
+ * Function to display a list of exchanges.
+ *
+ * @param {Array} exchanges - An array of exchange objects.
+ * @returns {void}
+ */
 function exchangesResult(exchanges) {
   exchangesList.innerHTML = "";
   const table = createTable(["Exchange", "Market"]);

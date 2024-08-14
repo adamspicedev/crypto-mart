@@ -24,6 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
     updateIcon(newTheme);
   });
 
+  /**
+   * Updates the icon based on the current theme.
+   *
+   * @param {string} currentTheme - The current theme ("light-theme" or any other theme).
+   * @returns {void}
+   */
   function updateIcon(currentTheme) {
     if (currentTheme === "light-theme") {
       themeToggle.classList.replace("ri-moon-line", "ri-sun-line");
@@ -126,6 +132,11 @@ function fetchGlobal() {
   }
 }
 
+/**
+ * Displays global data for cryptocurrencies.
+ *
+ * @param {Object} globalData - The global data object.
+ */
 function displayGlobalData(globalData) {
   coinsCount.textContent = globalData.active_cryptocurrencies || "N/A";
   exchangesCount.textContent = globalData.markets || "N/A";
@@ -158,6 +169,13 @@ function displayGlobalData(globalData) {
   dominance.textContent = `BTC ${btcDominance} - ETH ${ethDominance}`;
 }
 
+/**
+ * Toggles the visibility of a spinner and a list element.
+ *
+ * @param {string} listId - The ID of the list element.
+ * @param {string} spinnerId - The ID of the spinner element.
+ * @param {boolean} showSpinner - Determines whether to show or hide the spinner.
+ */
 function toggleSpinner(listId, spinnerId, showSpinner) {
   const element = document.getElementById(listId);
   const spinner = document.getElementById(spinnerId);
@@ -170,6 +188,13 @@ function toggleSpinner(listId, spinnerId, showSpinner) {
   }
 }
 
+/**
+ * Creates a table element with a header row containing the specified header names.
+ *
+ * @param {string[]} headerNames - An array of strings representing the header names.
+ * @param {number} [fixedIndex=0] - The index of the column to be fixed.
+ * @returns {HTMLTableElement} The created table element.
+ */
 function createTable(headerNames, fixedIndex = 0) {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
@@ -189,6 +214,14 @@ function createTable(headerNames, fixedIndex = 0) {
   return table;
 }
 
+/**
+ * Creates a widget and appends it to the specified container element.
+ *
+ * @param {string} containerId - The ID of the container element where the widget will be appended.
+ * @param {Object} widgetConfig - The configuration object for the widget.
+ * @param {string} widgetSrc - The source URL of the widget script.
+ * @returns {void}
+ */
 function createWidget(containerId, widgetConfig, widgetSrc) {
   const container = document.getElementById(containerId);
 
@@ -213,6 +246,15 @@ function createWidget(containerId, widgetConfig, widgetSrc) {
   }, 5000);
 }
 
+/**
+ * Retrieves the theme configuration.
+ *
+ * @returns {Object} The theme configuration object.
+ * @property {string} theme - The current theme.
+ * @property {boolean} isDarkTheme - Indicates if the current theme is dark.
+ * @property {string} backgroundColor - The background color based on the theme.
+ * @property {string} gridColor - The grid color based on the theme.
+ */
 function getThemeConfig() {
   const root = getComputedStyle(document.documentElement);
   const theme = localStorage.getItem("theme");
@@ -236,6 +278,11 @@ window.onscroll = () => {
   scrollFunction();
 };
 
+/**
+ * Function to handle scrolling behavior.
+ * It checks the scroll position and displays or hides the scroll-to-top
+ * button accordingly.
+ */
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     scrollToTopButton.style.display = "flex";
@@ -244,6 +291,9 @@ function scrollFunction() {
   }
 }
 
+/**
+ * Scrolls the page to the top.
+ */
 function scrollToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;

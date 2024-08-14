@@ -226,6 +226,12 @@ function displayTrendNfts(nfts) {
   nftsList.appendChild(table);
 }
 
+/**
+ * Displays a list of assets with their relevant information.
+ *
+ * @param {Object} data - The data containing the list of assets.
+ * @returns {void}
+ */
 function displayAssets(data) {
   const cryptoList = document.getElementById("asset-list");
   cryptoList.innerHTML = "";
@@ -359,6 +365,12 @@ function displayExchanges(data) {
   exchangeList.appendChild(table);
 }
 
+/**
+ * Displays a list of categories with their relevant information.
+ *
+ * @param {Object} data - The data containing the list of categories.
+ * @returns {void}
+ */
 function displayCategories(data) {
   const categoryList = document.getElementById("category-list");
   categoryList.innerHTML = "";
@@ -386,6 +398,12 @@ function displayCategories(data) {
   categoryList.appendChild(table);
 }
 
+/**
+ * Displays a list of companies with their relevant information.
+ *
+ * @param {Object} data - The data containing the list of companies.
+ * @returns {void}
+ */
 function displayCompanies(data) {
   const companiesList = document.getElementById("company-list");
   companiesList.innerHTML = "";
