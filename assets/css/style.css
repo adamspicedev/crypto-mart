@@ -79,12 +79,17 @@ div::-webkit-scrollbar {
 
 div::-webkit-scrollbar-track {
   border-radius: var(--border-radius);
+  background-color: transparent;
 }
 
 div::-webkit-scrollbar-thumb {
   background-color: var(--background-color-secondary);
   border-radius: var(--border-radius);
   width: 20px;
+}
+
+div::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
 }
 
 .red {
@@ -430,14 +435,16 @@ footer p {
   font-size: 13px;
 }
 
-footer .social-icons {
+footer .social-icons,
+#overlay .social-icons {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 footer .social-icons a,
-#scroll-to-top {
+#scroll-to-top,
+#overlay .social-icons a {
   background-color: var(--background-color);
   padding: 8px;
   border-radius: var(--border-radius);
@@ -446,11 +453,13 @@ footer .social-icons a,
 }
 
 footer .social-icons a:hover,
-#scroll-to-top:hover {
+#scroll-to-top:hover,
+#overlay .social-icons a:hover {
   background-color: var(--links-color);
 }
 
-footer .social-icons a i {
+footer .social-icons a i,
+#overlay .social-icons a i {
   font-size: 26px;
   color: var(--color-white);
 }
@@ -738,10 +747,304 @@ main > h3 {
   color: var(--links-color);
 }
 
-.tv-ticker-item-last__last {
-  color: var(--color-black) !important;
+#open-menu {
+  background-color: var(--background-color-secondary);
+  font-size: 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: none;
 }
 
-#ticker-widget {
-  background-color: transparent !important;
+#overlay {
+  position: fixed;
+  background-color: var(--background-color);
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  gap: 40px;
+}
+
+#overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#overlay .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#overlay .nav-links a {
+  font-size: 24px;
+  color: var(--color-white);
+  transition: all 0.3s ease;
+}
+
+#overlay .nav-links a.active,
+#overlay .nav-links a:hover {
+  color: var(--links-color);
+}
+
+#overlay button#close-menu {
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#overlay button#close-menu i {
+  font-size: 34px;
+  transition: all 0.3s ease;
+}
+
+#overlay button#close-menu:hover i {
+  color: var(--links-color);
+}
+
+@media screen and (max-width: 1400px) {
+  .coin-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .coin-container .left-section {
+    width: 38%;
+  }
+
+  .coin-container .main-section {
+    width: 59%;
+  }
+
+  .coin-container .right-section {
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .coin-container .right-section .status {
+    width: 33%;
+  }
+
+  .coin-container .right-section .status > h3,
+  .coin-container .right-section .status:first-child > h3 {
+    margin: 30px 0 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  nav .right-section {
+    width: 40%;
+  }
+
+  .trending .coins-wrapper .container,
+  .trending .nfts-wrapper .container,
+  .tab-content #asset-list,
+  .tab-content #exchange-list {
+    overflow: scroll;
+  }
+
+  .trending table,
+  #asset-list table,
+  #exchange-list table {
+    width: 150%;
+  }
+
+  table tr td.name-column {
+    max-width: 160px;
+    padding-right: 50px;
+  }
+
+  footer {
+    width: 60%;
+  }
+
+  .about-container .image img {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .global {
+    gap: 30px;
+  }
+
+  .global p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  nav .left-section {
+    gap: 20px;
+  }
+
+  .trending {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .trending .coins-wrapper,
+  .trending .nfts-wrapper {
+    width: 100%;
+  }
+
+  footer {
+    width: 100%;
+    padding: 16px 90px;
+  }
+
+  .tab-content #category-list,
+  .tab-content #company-list {
+    overflow-x: scroll;
+  }
+
+  .tab-content #category-list table,
+  .tab-content #company-list table {
+    width: 150%;
+  }
+
+  #asset-list table,
+  #exchange-list table {
+    width: 200%;
+  }
+
+  .search-container {
+    flex-wrap: wrap;
+  }
+
+  .search-container .item:nth-child(1),
+  .search-container .item:nth-child(2) {
+    width: 48%;
+  }
+
+  .search-container .item:nth-child(3) {
+    width: 100%;
+  }
+
+  .search-container .item:nth-child(3) h4 {
+    margin: 10px 0 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+  }
+
+  .about-container {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .about-container .image {
+    text-align: center;
+  }
+
+  .about-container .image img {
+    width: 60%;
+  }
+
+  .coin-container .left-section {
+    width: 100%;
+  }
+
+  .coin-container .main-section {
+    width: 100%;
+    width: 50vh;
+  }
+
+  .coin-container .right-section {
+    flex-wrap: wrap;
+  }
+
+  .coin-container .right-section .status:first-child {
+    width: 100%;
+  }
+  .coin-container .right-section .status {
+    width: 48%;
+  }
+
+  .coin-container .right-section > h3 {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .global p:last-child {
+    display: none;
+  }
+
+  nav .right-section {
+    width: 65%;
+  }
+
+  nav .left-section {
+    gap: 10px;
+  }
+
+  nav .left-section .nav-links {
+    display: none;
+  }
+
+  #open-menu {
+    display: flex;
+  }
+
+  .tab-container .tabs {
+    flex-wrap: wrap;
+    gap: 10px 0;
+  }
+
+  .tab-container .tab-button {
+    width: 50%;
+  }
+
+  #asset-list table,
+  #exchange-list table,
+  .tab-content #category-list table {
+    width: 300%;
+  }
+
+  .tab-content #company-list table {
+    width: 250%;
+  }
+
+  .tab-content #company-list table tr td.name-column {
+    max-width: 120px;
+  }
+
+  footer {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .chart-container {
+    height: 80vh;
+  }
+
+  .search-container item:nth-child(1),
+  .search-container item:nth-child(2) {
+    width: 100%;
+  }
+
+  .search-container item:not(:first-child) h4 {
+    margin: 10px 0 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+  }
+
+  .about-container .image img {
+    width: 100%;
+  }
+
+  .coin-container .right-section .status {
+    width: 100%;
+  }
 }

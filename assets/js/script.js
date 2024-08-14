@@ -404,7 +404,7 @@ function displayCompanies(data) {
       <td>$${company?.total_current_value_usd?.toLocaleString()}</td>
       <td class="${
         company?.percentage_of_total_supply >= 0 ? "green" : "red"
-      }">${company?.market_cap_change_24h?.toFixed(2)}%</td>
+      }">${company?.percentage_of_total_supply?.toFixed(2)}%</td>
       `;
 
     table.appendChild(row);

@@ -103,7 +103,7 @@ function coinsResult(coins) {
         <td>1</td>
         <td><img src="${coin.thumb}" alt="${coin.name}" />${coin.name} <span>(${coin.symbol})</span></td>
     `;
-    row.insertCell().textContent = coin.name;
+
     table.appendChild(row);
   }
   coinsList.appendChild(table);
@@ -117,7 +117,7 @@ function exchangesResult(exchanges) {
     const row = table.insertRow();
     row.innerHTML = `
         <td><img src="${exchange.thumb}" alt="${exchange.name}" />${exchange.name}</td>
-        <td>${exchange.market}</td>
+        <td>${exchange.market_type}</td>
     `;
     table.appendChild(row);
   }

@@ -11,14 +11,32 @@
     <title>Crypto-Mart</title>
   </head>
   <body>
+    <div id="overlay">
+      <button id="close-menu"><i class="ri-close-circle-line"></i></button>
+
+      <div class="nav-links">
+        <a href="/index.html" class="active">Home</a>
+        <a href="/pages/charts.html">Charts</a>
+        <a href="/pages/search.html">Search</a>
+        <a href="/pages/about.html">About</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="www.linkedin.com/in/adam-spice"
+          ><i class="ri-linkedin-box-fill"></i
+        ></a>
+      </div>
+    </div>
     <header class="header">
       <div class="global">
         <p>Coins: <b id="coins-count">14973</b></p>
         <p>Exchanges: <b id="exchanges-count">1164</b></p>
         <p>
-          Market Cap: <span><b id="market-cap">$2.297T</b></span
-          ><span id="market-cap-change"
-            >-4.9% <i class="ri-arrow-down-s-fill"></i
+          Market Cap:
+          <span
+            ><b id="market-cap">N/A</b> -
+            <span id="market-cap-change"
+              >N/A <i class="ri-arrow-down-s-fill"></i></span
           ></span>
         </p>
         <p>24h Vol: <b id="volume">$109.452B</b></p>
@@ -27,7 +45,8 @@
 
       <nav>
         <div class="left-section">
-          <a href="../index.html" class="logo">Crypto-Mart</a>
+          <button id="open-menu"><i class="ri-menu-line"></i></button>
+          <a href="/" class="logo">Crypto-Mart</a>
           <div class="nav-links">
             <a href="/index.html">Home</a>
             <a href="/pages/charts.html">Charts</a>
@@ -91,5 +110,7 @@
     <button onclick="scrollToTop()" id="scroll-to-top">
       <i class="ri-arrow-up-s-line"></i>
     </button>
+
+    <script src="../assets/js/app.js"></script>
   </body>
 </html>

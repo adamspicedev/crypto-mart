@@ -45,6 +45,24 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = `../../pages/search.html?query=${searchQuery}`;
   });
 
+  const openMenuBtn = document.getElementById("open-menu");
+  const overlay = document.getElementById("overlay");
+  const closeMenuBtn = document.getElementById("close-menu");
+
+  openMenuBtn.addEventListener("click", () => {
+    overlay.classList.add("show");
+  });
+
+  closeMenuBtn.addEventListener("click", () => {
+    overlay.classList.remove("show");
+  });
+
+  overlay.addEventListener("click", (event) => {
+    if (event.target === overlay) {
+      overlay.classList.remove("show");
+    }
+  });
+
   fetchGlobal();
 });
 
@@ -211,4 +229,22 @@ function getThemeConfig() {
     .trim();
 
   return { theme, isDarkTheme, backgroundColor, gridColor };
+}
+
+const scrollToTopButton = document.getElementById("scroll-to-top");
+window.onscroll = () => {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollToTopButton.style.display = "flex";
+  } else {
+    scrollToTopButton.style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }

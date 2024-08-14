@@ -11,14 +11,32 @@
     <title>Crypto-Mart</title>
   </head>
   <body>
+    <div id="overlay">
+      <button id="close-menu"><i class="ri-close-circle-line"></i></button>
+
+      <div class="nav-links">
+        <a href="/index.html" class="active">Home</a>
+        <a href="/pages/charts.html">Charts</a>
+        <a href="/pages/search.html">Search</a>
+        <a href="/pages/about.html">About</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="www.linkedin.com/in/adam-spice"
+          ><i class="ri-linkedin-box-fill"></i
+        ></a>
+      </div>
+    </div>
     <header class="header">
       <div class="global">
         <p>Coins: <b id="coins-count">N/A</b></p>
         <p>Exchanges: <b id="exchanges-count">N/A</b></p>
         <p>
-          Market Cap: <span><b id="market-cap">N/A</b></span>
-          <span id="market-cap-change"
-            >N/A <i class="ri-arrow-down-s-fill"></i
+          Market Cap:
+          <span
+            ><b id="market-cap">N/A</b> -
+            <span id="market-cap-change"
+              >N/A <i class="ri-arrow-down-s-fill"></i></span
           ></span>
         </p>
         <p>24h Vol: <b id="volume">N/A</b></p>
@@ -27,7 +45,8 @@
 
       <nav>
         <div class="left-section">
-          <div href="../index.html" class="logo">Crypto-Mart</div>
+          <button id="open-menu"><i class="ri-menu-line"></i></button>
+          <a href="/" class="logo">Crypto-Mart</a>
           <div class="nav-links">
             <a href="/index.html" class="active">Home</a>
             <a href="/pages/charts.html">Charts</a>
@@ -103,220 +122,21 @@
           </div>
         </div>
         <div class="tab-content" id="tab2">
-          <div id="exchange-list">
-            <table>
-              <thead>
-                <th>Rank</th>
-                <th class="table-fixed-column">Exchange</th>
-                <th>Trust Score</th>
-                <th>24h Trade</th>
-                <th>24h Trade (Normal)</th>
-                <th>Country</th>
-                <th>Website</th>
-                <th>Year</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="rank">1</td>
-                  <td class="name-column table-fixed-column">
-                    <img src="/assets/images/bitcoin.svg" alt="Bitcoin" />
-                    Bitcoin <span>(BTC)</span>
-                  </td>
-                  <td>10</td>
-                  <td>$15,618,100,563 BTC</td>
-                  <td>$15,618,100 BTC</td>
-                  <td class="name-column">Cayman Islands</td>
-                  <td class="name-column">https://www.binance.com</td>
-                  <td>2017</td>
-                </tr>
-                <tr>
-                  <td class="rank">2</td>
-                  <td class="name-column table-fixed-column">
-                    <img src="/assets/images/bitcoin.svg" alt="Bitcoin" />
-                    Bitcoin <span>(BTC)</span>
-                  </td>
-                  <td>10</td>
-                  <td>$15,618,100,563 BTC</td>
-                  <td>$15,618,100 BTC</td>
-                  <td class="name-column">Cayman Islands</td>
-                  <td class="name-column">https://www.binance.com</td>
-                  <td>2017</td>
-                </tr>
-                <tr>
-                  <td class="rank">3</td>
-                  <td class="name-column table-fixed-column">
-                    <img src="/assets/images/bitcoin.svg" alt="Bitcoin" />
-                    Bitcoin <span>(BTC)</span>
-                  </td>
-                  <td>10</td>
-                  <td>$15,618,100,563 BTC</td>
-                  <td>$15,618,100 BTC</td>
-                  <td class="name-column">Cayman Islands</td>
-                  <td class="name-column">https://www.binance.com</td>
-                  <td>2017</td>
-                </tr>
-                <tr>
-                  <td class="rank">4</td>
-                  <td class="name-column table-fixed-column">
-                    <img src="/assets/images/bitcoin.svg" alt="Bitcoin" />
-                    Bitcoin <span>(BTC)</span>
-                  </td>
-                  <td>10</td>
-                  <td>$15,618,100,563 BTC</td>
-                  <td>$15,618,100 BTC</td>
-                  <td class="name-column">Cayman Islands</td>
-                  <td class="name-column">https://www.binance.com</td>
-                  <td>2017</td>
-                </tr>
-                <tr>
-                  <td class="rank">5</td>
-                  <td class="name-column table-fixed-column">
-                    <img src="/assets/images/bitcoin.svg" alt="Bitcoin" />
-                    Bitcoin <span>(BTC)</span>
-                  </td>
-                  <td>10</td>
-                  <td>$15,618,100,563 BTC</td>
-                  <td>$15,618,100 BTC</td>
-                  <td class="name-column">Cayman Islands</td>
-                  <td class="name-column">https://www.binance.com</td>
-                  <td>2017</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <div id="exchange-list"></div>
           <div class="spinner" id="exchange-list-spinner"></div>
           <div class="error-message" id="exchange-list-error">
             API limit reached, please try again later.
           </div>
         </div>
         <div class="tab-content" id="tab3">
-          <div id="category-list">
-            <div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Top Coins</th>
-                    <th class="table-fixed-column">Category</th>
-                    <th>Market Cap</th>
-                    <th>24h Market Cap</th>
-                    <th>24h Volume</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                    </td>
-                    <td class="name-column table-fixed-column">FTX Holdings</td>
-                    <td>$1,988,948,691,379.719</td>
-                    <td class="green">3.649%</td>
-                    <td>$128,265,112,529.668</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                    </td>
-                    <td class="name-column table-fixed-column">FTX Holdings</td>
-                    <td>$1,988,948,691,379.719</td>
-                    <td class="green">3.649%</td>
-                    <td>$128,265,112,529.668</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                    </td>
-                    <td class="name-column table-fixed-column">FTX Holdings</td>
-                    <td>$1,988,948,691,379.719</td>
-                    <td class="green">3.649%</td>
-                    <td>$128,265,112,529.668</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                      <img src="/assets/images/bitcoin.svg" alt="coin" />
-                    </td>
-                    <td class="name-column table-fixed-column">FTX Holdings</td>
-                    <td>$1,988,948,691,379.719</td>
-                    <td class="green">3.649%</td>
-                    <td>$128,265,112,529.668</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="spinner" id="category-list-spinner"></div>
-            <div class="error-message" id="category-list-error">
-              API limit reached, please try again later.
-            </div>
+          <div id="category-list"></div>
+          <div class="spinner" id="category-list-spinner"></div>
+          <div class="error-message" id="category-list-error">
+            API limit reached, please try again later.
           </div>
         </div>
         <div class="tab-content" id="tab4">
-          <div id="company-list">
-            <table>
-              <thead>
-                <tr>
-                  <th>Company</th>
-                  <th>Total BTC</th>
-                  <th>Entry Value</th>
-                  <th>Total Current Value</th>
-                  <th>Total %</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="name-column table-fixed-column">
-                    MicroStrategy Inc.
-                  </td>
-                  <td>226331</td>
-                  <td>8333000900</td>
-                  <td>14606554356454</td>
-                  <td class="green">1.078%</td>
-                </tr>
-                <tr>
-                  <td class="name-column table-fixed-column">
-                    MicroStrategy Inc.
-                  </td>
-                  <td>226331</td>
-                  <td>8333000900</td>
-                  <td>14606554356454</td>
-                  <td class="green">1.078%</td>
-                </tr>
-                <tr>
-                  <td class="name-column table-fixed-column">
-                    MicroStrategy Inc.
-                  </td>
-                  <td>226331</td>
-                  <td>8333000900</td>
-                  <td>14606554356454</td>
-                  <td class="green">1.078%</td>
-                </tr>
-                <tr>
-                  <td class="name-column table-fixed-column">
-                    MicroStrategy Inc.
-                  </td>
-                  <td>226331</td>
-                  <td>8333000900</td>
-                  <td>14606554356454</td>
-                  <td class="green">1.078%</td>
-                </tr>
-                <tr>
-                  <td class="name-column table-fixed-column">
-                    MicroStrategy Inc.
-                  </td>
-                  <td>226331</td>
-                  <td>8333000900</td>
-                  <td>14606554356454</td>
-                  <td class="green">1.078%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <div id="company-list"></div>
           <div class="spinner" id="company-list-spinner"></div>
           <div class="error-message" id="company-list-error">
             API limit reached, please try again later.

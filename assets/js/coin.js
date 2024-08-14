@@ -265,20 +265,23 @@ function displayCoinInfo(coin) {
       <div class="status">
         <h3>Markets</h3>
         <div class="container">
-          ${[0, 1, 2].map(
+        ${[0, 1, 2]
+          .map(
             (index) => `<div class="item">
-            <p class="str">${coin.tickers[index].market.name.replace(
-              "Exchange",
-              ""
-            )}</p>
-            <div class="links">
-              <a href="${coin.tickers[index].trade_url}">Trade</a>
-              <p style="background-color: ${
-                coin.tickers[index].trust_score
-              }">Trust: ${coin.tickers[index].trust_score}</p>
-            </div>
-          </div>`
-          )}
+          <p class="str">${coin.tickers[index].market.name.replace(
+            "Exchange",
+            ""
+          )}</p>
+          <div class="links">
+            <a href="${coin.tickers[index].trade_url}">Trade</a>
+            <p style="background-color: ${
+              coin.tickers[index].trust_score
+            };">Trusted?</p>
+          </div>
+        </div>
+        `
+          )
+          .join("")}
         </div>
       </div>
 
