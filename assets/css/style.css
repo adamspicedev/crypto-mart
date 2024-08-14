@@ -215,6 +215,12 @@ nav .left-section .logo {
   font-weight: 600;
 }
 
+nav .left-section .small-logo {
+  font-size: 26px;
+  font-weight: 600;
+  display: none;
+}
+
 nav .left-section .nav-links {
   display: flex;
   gap: 10px;
@@ -889,6 +895,10 @@ main > h3 {
     gap: 20px;
   }
 
+  nav .left-section .logo {
+    font-size: 20px;
+  }
+
   .trending {
     flex-direction: column;
     gap: 36px;
@@ -1046,5 +1056,23 @@ main > h3 {
 
   .coin-container .right-section .status {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .logo {
+    display: none;
+  }
+
+  nav .left-section .small-logo {
+    display: block;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  nav .right-section {
+    gap: 15px;
   }
 }
