@@ -35,6 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  const searchForm = document.getElementById("search-form");
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const searchInput = document.getElementById("search-input");
+    const searchQuery = searchInput.value.trim();
+    if (!searchQuery) return;
+
+    window.location.href = `../../pages/search.html?query=${searchQuery}`;
+  });
+
   fetchGlobal();
 });
 
@@ -183,4 +193,22 @@ function createWidget(containerId, widgetConfig, widgetSrc) {
       copyright.classList.remove("hidden");
     }
   }, 5000);
+}
+
+function getThemeConfig() {
+  const root = getComputedStyle(document.documentElement);
+  const theme = localStorage.getItem("theme");
+  const isDarkTheme = theme === "dark-theme";
+
+  const backgroundColor = root
+    .getPropertyValue(isDarkTheme ? "--chart-dark-bg" : "--chart-light-bg")
+    .trim();
+
+  const gridColor = root
+    .getPropertyPriority(
+      isDarkTheme ? "--chart-dark-border" : "--chart-light-border"
+    )
+    .trim();
+
+  return { theme, isDarkTheme, backgroundColor, gridColor };
 }

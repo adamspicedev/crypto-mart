@@ -1,5 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+:root {
+  --background-color: #fff;
+  --background-color-primary: #fff;
+  --background-color-secondary: #eff2f5;
+
+  --color-white: #000;
+  --color-black: #fff;
+  --border-color: #d4d4d4;
+  --text-secondary: #55626f;
+
+  --chart-light-bg: #fff;
+  --chart-dark-bg: #050505;
+  --chart-light-border: #d4d4d4;
+  --chart-dark-border: #333;
+
+  --links-color: #1565c0;
+
+  --border-radius: 12px;
+}
+
 #light-theme {
   --background-color: #fff;
   --background-color-primary: #fff;
@@ -10,7 +30,7 @@
   --border-color: #d4d4d4;
   --text-secondary: #55626f;
 
-  --char-light-bg: #fff;
+  --chart-light-bg: #fff;
   --chart-dark-bg: #050505;
   --chart-light-border: #d4d4d4;
   --chart-dark-border: #333;
@@ -29,6 +49,11 @@
   --color-black: #000;
   --border-color: #1d1f22;
   --text-secondary: #bebebe;
+
+  --chart-light-bg: #fff;
+  --chart-dark-bg: #050505;
+  --chart-light-border: #d4d4d4;
+  --chart-dark-border: #333;
 
   --links-color: #1565c0;
 
@@ -649,6 +674,11 @@ main > h3 {
   width: 48%;
 }
 
+.coin-container .main-section .mini-chart {
+  width: 100%;
+  height: 100%;
+}
+
 .coin-container .main-section .mini-chart .tradingview-widget-container {
   padding: 0;
 }
@@ -706,4 +736,12 @@ main > h3 {
 
 .coin-desc p a {
   color: var(--links-color);
+}
+
+.tv-ticker-item-last__last {
+  color: var(--color-black) !important;
+}
+
+#ticker-widget {
+  background-color: transparent !important;
 }

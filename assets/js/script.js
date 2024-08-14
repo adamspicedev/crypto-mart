@@ -265,8 +265,10 @@ function displayAssets(data) {
       <td>$${asset.market_cap.toLocaleString()}</td>
       <td><canvas id="chart-${asset.id}" width="100" height="50"></canvas></td>
       `;
-
+    row.onclick = () =>
+      (window.location.href = `../../pages/coin.html?coin=${asset.id}`);
     table.appendChild(row);
+
     sparklineData.push({
       id: asset.id,
       sparkline: asset.sparkline_in_7d.price,
@@ -338,23 +340,18 @@ function displayExchanges(data) {
   for (const exchange of data) {
     const row = document.createElement("tr");
     row.innerHTML = `
-       <td class="rank">${exchange.trust_score_rank}</td>
-                  <td class="name-column table-fixed-column">
-                    <img src="${exchange.image}" alt="${exchange.name}" />
-                    ${exchange.name}
-                  </td>
-                  <td>${exchange.trust_score}</td>
-                  <td>${parseFloat(exchange.trade_volume_24h_btc).toFixed(
-                    6
-                  )} BTC</td>
-                  <td>${parseFloat(
-                    exchange.trade_volume_24h_btc_normalized
-                  ).toFixed(6)} BTC</td>
-                  <td class="name-column">${exchange.country}</td>
-                  <td class="name-column"><a href="${exchange.url}">${
-      exchange.url
-    }</a></td>
-                  <td>${exchange.year_established}</td>
+      <td class="rank">${exchange.trust_score_rank}</td>
+      <td class="name-column table-fixed-column"><img src="${
+        exchange.image
+      }" alt="${exchange.name}" />${exchange.name}</td>
+      <td>${exchange.trust_score}</td>
+      <td>${parseFloat(exchange.trade_volume_24h_btc).toFixed(6)} BTC</td>
+      <td>${parseFloat(exchange.trade_volume_24h_btc_normalized).toFixed(
+        6
+      )} BTC</td>
+      <td class="name-column">${exchange.country}</td>
+      <td class="name-column"><a href="${exchange.url}">${exchange.url}</a></td>
+      <td>${exchange.year_established}</td>
       `;
 
     table.appendChild(row);
@@ -373,19 +370,15 @@ function displayCategories(data) {
   for (const category of data) {
     const row = document.createElement("tr");
     row.innerHTML = `
-       <td>
-                     ${category.top_3_coins.map(
-                       (coinUrl) => `<img src="${coinUrl}" alt="coin" />`
-                     )}
-                    </td>
-                    <td class="name-column table-fixed-column">${
-                      category.name
-                    }</td>
-                    <td>$${category?.market_cap?.toLocaleString()}</td>
-                    <td class="${
-                      category?.market_cap_change_24h >= 0 ? "green" : "red"
-                    }">${category?.market_cap_change_24h?.toFixed(2)}%</td>
-                    <td>$${category?.volume_24h?.toLocaleString()}</td>
+      <td>${category.top_3_coins.map(
+        (coinUrl) => `<img src="${coinUrl}" alt="coin" />`
+      )}</td>
+      <td class="name-column table-fixed-column">${category.name}</td>
+      <td>$${category?.market_cap?.toLocaleString()}</td>
+      <td class="${
+        category?.market_cap_change_24h >= 0 ? "green" : "red"
+      }">${category?.market_cap_change_24h?.toFixed(2)}%</td>
+      <td>$${category?.volume_24h?.toLocaleString()}</td>
       `;
 
     table.appendChild(row);
@@ -411,7 +404,7 @@ function displayCompanies(data) {
       <td>$${company?.total_current_value_usd?.toLocaleString()}</td>
       <td class="${
         company?.percentage_of_total_supply >= 0 ? "green" : "red"
-      }">${company?.percentage_of_total_supply?.toFixed(2)}%</td>
+      }">${company?.market_cap_change_24h?.toFixed(2)}%</td>
       `;
 
     table.appendChild(row);
